@@ -103,9 +103,7 @@ class Mul(ScalarFunction):
 
     @staticmethod
     def forward(ctx: Context, a: float, b: float) -> float:
-        # TODO: Implement for Task 1.2.
-        raise NotImplementedError("Need to implement for Task 1.2")
-
+        return a*b
     @staticmethod
     def backward(ctx: Context, d_output: float) -> Tuple[float, float]:
         # TODO: Implement for Task 1.4.

@@ -22,8 +22,16 @@ def central_difference(f: Any, *vals: Any, arg: int = 0, epsilon: float = 1e-6) 
     Returns:
         An approximation of $f'_i(x_0, \ldots, x_{n-1})$
     """
-    # TODO: Implement for Task 1.1.
-    raise NotImplementedError("Need to implement for Task 1.1")
+    vals[arg] += epsilon
+    f_plus = f(*vals)
+
+    vals[arg] -= 2 * epsilon
+    f_minus = f(*vals)
+
+    # 计算导数的近似值
+    derivative = (f_plus - f_minus) / (2 * epsilon)
+
+    return derivative
 
 
 variable_count = 1
